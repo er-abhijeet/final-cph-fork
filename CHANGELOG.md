@@ -1,5 +1,41 @@
 # Changelog
 
+## 1.1.0 (2026) - Initial Cloud Edition Release
+
+### Major Changes
+
+- **Cloud-Based Compilation**: Complete rewrite of the backend to use cloud API for compilation and execution
+- **Platform Independence**: No local compiler setup required - works on any OS
+- **Quick Run Feature**: Added Quick Run button in editor title bar for fast testing with input.txt
+- **Backend Rewrite**: Entire backend implementation is original work (cloud API integration, compilation logic, execution handling)
+
+### Features
+
+- Cloud API integration for compilation and execution
+- Support for C, C++, Python, Java, JavaScript, Rust, Go, C# via cloud API
+- Quick Run button in editor title bar
+- Automatic fallback to local compilation for unsupported languages
+- Improved error handling with user-friendly messages
+
+### Technical Details
+
+- Modified `compiler.ts` to skip local compilation when cloud API is enabled
+- Modified `executions.ts` to use cloud API instead of local execution
+- New `apiClient.ts` module for cloud API communication
+- New `quickRun.ts` module for Quick Run functionality
+- Updated configuration with `cph.general.cloudCompilerApiUrl` setting
+
+### Credits
+
+- Frontend interface based on original CPH extension by Divyanshu Agrawal
+- Cloud backend implementation by Abhijeet Mohapatra
+
+---
+
+## Original CPH Changelog (Before Fork)
+
+The following changelog is from the original CPH extension by Divyanshu Agrawal:
+
 ## 5.9.2
 
 -   Minor UI improvments for small sidebar widths.

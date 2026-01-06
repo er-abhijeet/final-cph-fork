@@ -1,11 +1,11 @@
 {
-    "name": "competitive-programming-helper",
-    "displayName": "Competitive Programming Helper (cph)",
-    "description": "Makes judging, compiling, and downloading problems for competitve programming easy. Also supports auto-submit for a few sites.",
+    "name": "cloud-compiler-cph-fork",
+    "displayName": "CPH Cloud Compiler- CPH Fork (Cloud Edition)",
+    "description": "Competitive Programming Helper with cloud-based compilation and execution. Platform-independent, no local compiler setup required. Fork of original CPH with cloud backend implementation.",
     "license": "GPL-3.0-or-later",
     "icon": "icon.png",
-    "publisher": "DivyanshuAgrawal",
-    "version": "2077.0.0",
+    "publisher": "AbhijeetMohapatra",
+    "version": "1.1.0",
     "engines": {
         "vscode": "^1.52.0"
     },
@@ -16,7 +16,7 @@
         "*"
     ],
     "sponsor": {
-        "url": "https://rb.gy/5iiorz"
+        "url": "https://buymeacoffee.com/abhijeetmohapatra"
     },
     "main": "dist/extension.js",
     "contributes": {
@@ -466,6 +466,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/agrawal-d/competitive-programming-helper/"
-    }
+        "url": "https://github.com/er-abhijeet/final-cph-fork.git"
+    },
+    "author": {
+        "name": "Abhijeet Mohapatra",
+        "email": "er.abhijeet83@gmail.com",
+        "url": "https://github.com/er-abhijeet"
+    },
+    "bugs": {
+        "url": "https://github.com/er-abhijeet/final-cph-fork/issues"
+    },
+    "homepage": "https://github.com/er-abhijeet/final-cph-fork#readme"
 }

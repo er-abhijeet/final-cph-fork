@@ -267,7 +267,7 @@ class JudgeViewProvider implements vscode.WebviewViewProvider {
                     <div id="app">
                         An error occurred! Restarting VS Code may solve the
                         issue. If not, please
-                        <a href="https://github.com/agrawal-d/cph/issues"
+                        <a href="https://github.com/er-abhijeet/final-cph-fork/issues"
                             >report the bug on GitHub</a
                         >.
                     </div>

@@ -9,10 +9,17 @@ This document contains instructions on how to use this extension.
 This image is outdated. Please refer to README for an updated UI. The button
 actions remain the same.
 
+## Cloud API Setup
+
+⚠️ **Important**: This extension requires a cloud compiler API endpoint to be configured.
+
+1. Open VS Code Settings (Ctrl+,)
+2. Search for `cph.general.cloudCompilerApiUrl`
+3. Set it to your cloud compiler API endpoint (default: `http://20.244.41.47:3000`)
+
 ## Using with competitive companion
 
-1. [Install cph](https://marketplace.visualstudio.com/items?itemName=DivyanshuAgrawal.competitive-programming-helper)
-   by following the instructions given in the link.
+1. Install CPH Cloud extension (or build from source)
 
 1. [Install competitive companion](https://github.com/jmerle/competitive-companion#readme)
    browser extension in your browser, using the instructions given in the link.
@@ -116,4 +123,13 @@ Several options are available to customize the extension. Open VS Code settings
 ## Getting help
 
 If you have trouble using the extension, find any bugs, or want to request a new
-feature, please create an issue [here](https://github.com/agrawal-d/cph/issues).
+feature, please create an issue [here](https://github.com/er-abhijeet/final-cph-fork/issues).
+
+## Quick Run Feature
+
+You can use the Quick Run button in the editor title bar for fast testing:
+
+1. Open a code file (`.cpp`, `.py`, `.java`, etc.)
+2. Create an `input.txt` file in the same directory with your test input
+3. Click the Quick Run button in the editor title bar
+4. Output will appear in a terminal named "CPH Quick Run"

@@ -80,4 +80,20 @@ Then, in the root directory, run `vsce package` to generate the extension file.
 ## Getting help
 
 To discuss ideas and problems while development, please create an issue in the
-[repo](https://github.com/agrawal-d/cph).
+[repo](https://github.com/er-abhijeet/final-cph-fork).
+
+## Cloud API Integration
+
+This fork uses a cloud-based compilation and execution API. Key files:
+
+- `src/apiClient.ts` - Cloud API client module
+- `src/compiler.ts` - Modified to use cloud API
+- `src/executions.ts` - Modified to use cloud API
+- `src/quickRun.ts` - Quick Run feature
+
+The backend implementation (cloud API integration, compilation logic, execution handling) is original work, while the frontend interface is based on the original CPH extension.
+
+## Contact
+
+- **GitHub**: [@er-abhijeet](https://github.com/er-abhijeet)
+- **Email**: er.abhijeet83@gmail.com

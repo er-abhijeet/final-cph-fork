@@ -51,8 +51,7 @@ window.console.warn = customLogger.bind(window.console, originalConsole.warn);
 window.console.info = customLogger.bind(window.console, originalConsole.info);
 window.console.debug = customLogger.bind(window.console, originalConsole.debug);
 
-// Original: www.paypal.com/ncp/payment/CMLKCFEJEMX5L
-const payPalUrl = 'https://rb.gy/5iiorz';
+const buyMeACoffeeUrl = 'https://buymeacoffee.com/abhijeetmohapatra';
 
 function getLiveUserCount(): Promise<number> {
     console.log('Fetching live user count');
@@ -498,11 +497,13 @@ function Judge(props: {
                     CPH. CPH is free and open source, thanks to your support.
                 </p>
                 <a
-                    href={payPalUrl}
+                    href={buyMeACoffeeUrl}
                     className="btn btn-pink"
-                    title="Open donation page"
+                    title="Buy me a coffee"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
-                    <i className="codicon codicon-heart-filled"></i> Donate
+                    <i className="codicon codicon-heart-filled"></i> Support
                 </a>
             </div>
         );
@@ -517,7 +518,7 @@ function Judge(props: {
             return (
                 <Page
                     content="Loading..."
-                    title="About CPH"
+                    title="About CPH Cloud"
                     closePage={() => setInfoPageVisible(false)}
                 />
             );
@@ -525,30 +526,45 @@ function Judge(props: {
         const logs = storedLogs;
         const contents = (
             <div>
-                A VS Code extension to make competitive programming easier,
-                created by Divyanshu Agrawal
+                <h3>About CPH Cloud</h3>
+                <p>
+                    A VS Code extension for competitive programming with <strong>cloud-based compilation and execution</strong>.
+                    Platform-independent, no local compiler setup required.
+                </p>
+                <p>
+                    <strong>Note:</strong> This is a fork of the original{' '}
+                    <a href="https://github.com/agrawal-d/cph" target="_blank" rel="noopener noreferrer">
+                        CPH extension
+                    </a>{' '}
+                    by Divyanshu Agrawal. The frontend interface is based on the original, but the entire backend 
+                    (cloud API integration, compilation logic, execution handling) is original work.
+                </p>
                 <hr />
-                <h3>🤖 Enable AI compilation</h3>
-                Get 100x faster compilation using AI, please opt-in below. Your
-                data will be used to train cats to write JavaScript.
-                <br />
-                <br />
-                <button
-                    className="btn btn-green"
-                    onClick={(e) => {
-                        const target = e.target as HTMLButtonElement;
-                        target.innerText = '🪄 AI training ...';
-                    }}
-                >
-                    Enable
-                </button>
+                <h3>Features</h3>
+                <ul>
+                    <li>Cloud-based compilation - No local compiler setup needed</li>
+                    <li>Platform-independent - Works on any OS</li>
+                    <li>Quick Run button in editor title bar</li>
+                    <li>Automatic testcase management</li>
+                    <li>Intelligent judge with timeout and error detection</li>
+                </ul>
                 <hr />
                 <h3>Get Help</h3>
                 <a
                     className="btn"
-                    href="https://github.com/agrawal-d/cph/blob/main/docs/user-guide.md"
+                    href="https://github.com/er-abhijeet/final-cph-fork#readme"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
-                    User guide
+                    Documentation
+                </a>
+                <a
+                    className="btn"
+                    href="https://github.com/er-abhijeet/final-cph-fork/issues"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Report Issue
                 </a>
                 <hr />
                 <h3>Commit</h3>
@@ -580,7 +596,7 @@ function Judge(props: {
         return (
             <Page
                 content={contents}
-                title="About CPH"
+                title="About CPH Cloud"
                 closePage={() => setInfoPageVisible(false)}
             />
         );
@@ -671,26 +687,34 @@ function Judge(props: {
                 <div>
                     <small>
                         <a
-                            href={payPalUrl}
+                            href={buyMeACoffeeUrl}
                             className="btn btn-pink"
-                            title="Donate"
+                            title="Buy me a coffee"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <i className="codicon codicon-heart-filled"></i>{' '}
                             Support
                         </a>
                     </small>
                     <small>
-                        <a href="https://rb.gy/vw82u5" className="btn">
-                            <i className="codicon codicon-feedback"></i>{' '}
-                            Feedback
+                        <a
+                            href="https://github.com/er-abhijeet/final-cph-fork/issues"
+                            className="btn btn-black"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i className="codicon codicon-github"></i> Issues
                         </a>
                     </small>
                     <small>
                         <a
-                            href="https://github.com/agrawal-d/cph/issues"
-                            className="btn btn-black"
+                            href="https://github.com/er-abhijeet/final-cph-fork"
+                            className="btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            <i className="codicon codicon-github"></i> Bugs
+                            <i className="codicon codicon-github"></i> GitHub
                         </a>
                     </small>
                 </div>
@@ -900,7 +924,9 @@ function App() {
                         </div>
                         <a
                             className="btn btn-block btn-green"
-                            href="https://github.com/agrawal-d/cph/blob/main/docs/user-guide.md"
+                            href="https://github.com/er-abhijeet/final-cph-fork#readme"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <span className="icon">
                                 <i className="codicon codicon-question"></i>

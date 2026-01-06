@@ -1,82 +1,126 @@
-# Competitive Programming Helper (cph)
+# CPH Cloud Compiler - Competitive Programming Helper (Cloud Edition)
 
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fagrawal-d%2Fcph%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/agrawal-d/cph/goto?ref=main)
-[![Downloads](https://img.shields.io/visual-studio-marketplace/d/DivyanshuAgrawal.competitive-programming-helper)](https://marketplace.visualstudio.com/items?itemName=DivyanshuAgrawal.competitive-programming-helper)
 
-Quickly compile, run and judge competitive programming problems in VS Code.
-Automatically download testcases , or write & test your own problems. Once you
-are done, easily submit your solutions directly with the click of a button!
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/er-abhijeet/final-cph-fork)
 
-Cph supports a large number of popular platforms like Codeforces, Codechef,
-TopCoder etc. with the help of competitive companion browser extension
+⚠️ **WARNING: If you have the original CPH extension installed and enabled, please disable or uninstall it and restart VSCode before installing and using this extension!**
 
-![Screenshot](screenshots/screenshot-main.png)
+## About This Fork
 
-## Quick start
+This extension is a fork of the original [Competitive Programming Helper (CPH)](https://github.com/agrawal-d/cph) by Divyanshu Agrawal. However, this version has been significantly modified to use a **cloud-based compilation and execution API** instead of local compilers.
 
-1. [Install cph](https://marketplace.visualstudio.com/items?itemName=DivyanshuAgrawal.competitive-programming-helper)
-   in VS Code and open any folder.
-1. [Install competitive companion](https://github.com/jmerle/competitive-companion#readme)
-   in your browser.
-1. Use Companion by pressing the green plus (+) circle from the browser toolbar
-   when visiting any problem page.
-1. The file opens in VS Code with testcases preloaded. Press
-   <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> to run them.
+### Key Differences
 
--   (Optional) Install the [cph-submit](https://github.com/agrawal-d/cph-submit)
-    browser extension to enable submitting directly on CodeForces.
--   (Optional) Install submit client and config file from the
-    [Kattis help page](https://open.kattis.com/help/submit) after logging in.
+- **Cloud-Based Execution**: All code compilation and execution happens via a cloud API, making it platform-independent
+- **No Local Setup Required**: You don't need to install compilers (gcc, g++, Python, Java, etc.) on your machine
+- **Easy to Use**: Just configure the API endpoint and start coding
+- **Same Great UI**: The frontend interface remains from the original CPH extension
 
-You can also use this extension locally, just open any supported file and press
-'Run Testcases' (or <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>) to manually
-enter testcases.
-
-[![See detailed user guide](https://img.shields.io/badge/-Read%20detailed%20usage%20guide-blue?style=for-the-badge)](docs/user-guide.md)
+**Note**: The frontend interface is based on the original CPH extension by Divyanshu Agrawal, but the entire backend implementation (cloud API integration, compilation logic, execution handling) is original work.
 
 ## Features
 
--   Automatic compilation with display for compilation errors.
--   Intelligent judge with support for signals, timeouts and runtime errors.
--   Works with Competitive Companion.
--   [Codeforces auto-submit](https://github.com/agrawal-d/cph-submit)
-    integration.
--   [Kattis auto-submit](docs/user-guide.md) integration.
--   Works locally for your own problems.
--   Support for several languages.
+- **Cloud Compilation**: Compile and run code via cloud API - no local compiler setup needed
+- **Platform Independent**: Works on any OS without installing language-specific compilers
+- **Automatic Testcase Management**: Automatically download testcases or write & test your own problems
+- **Intelligent Judge**: Support for signals, timeouts and runtime errors
+- **Competitive Companion Integration**: Works with Competitive Companion browser extension
+- **Quick Run Button**: Quick run button in editor title bar for fast testing
+- **Multiple Language Support**: C, C++, Python, Java, JavaScript, Rust, Go, C# and more
+
+## Quick Start
+
+1. **Install the extension** from the VS Code marketplace (or build from source)
+2. **Configure the API endpoint** in VS Code settings:
+   - Open Settings (Ctrl+,)
+   - Search for `cph.general.cloudCompilerApiUrl`
+   - Set it to your cloud compiler API endpoint (default: `http://sample_url_backend:port`)
+3. **Install Competitive Companion** (optional) - [Install from here](https://github.com/jmerle/competitive-companion#readme)
+4. **Start coding!** 
+   - Use Companion by pressing the green plus (+) circle when visiting any problem page
+   - Or manually create testcases and press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> to run them
+   - Or use the **Quick Run** button in the editor title bar
 
 ## Supported Languages
 
--   C++
--   C
--   C#
--   Rust
--   Go
--   Haskell
--   Python
--   Ruby
--   Java
--   JavaScript (Node.js)
+The following languages are supported via the cloud API:
+
+- **C** (`.c`)
+- **C++** (`.cpp`, `.cc`, `.cxx`)
+- **Python** (`.py`)
+- **Java** (`.java`)
+- **JavaScript** (`.js`)
+- **Rust** (`.rs`)
+- **Go** (`.go`)
+- **C#** (`.cs`)
+
+**Note**: Some languages (Ruby, Haskell, Cangjie) are not yet supported by the cloud API. The developers are working on adding support for them. For these languages, you can still use local compilation if available.
+
+## Configuration
+
+### Cloud API Endpoint
+
+Set your cloud compiler API endpoint in VS Code settings:
+
+```json
+{
+  "cph.general.cloudCompilerApiUrl": "http://sample_url_backend:port"
+}
+```
+
+### Quick Run Feature
+
+The Quick Run button appears in the editor title bar for supported languages. It:
+- Uses the currently opened file as code
+- Reads `input.txt` from the same directory
+- Compiles and runs via cloud API
+- Shows output in a terminal
+
+## Installation from Source
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/er-abhijeet/final-cph-fork.git
+   cd final-cph-fork
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Build the extension:
+   ```bash
+   npm run webpack
+   ```
+
+4. Press F5 in VS Code to launch the Extension Development Host
+
+## Credits
+
+- **Original CPH Extension**: Created by [Divyanshu Agrawal](https://github.com/agrawal-d/cph) - The frontend interface is based on this excellent work
+- **Cloud Backend Implementation**: Original work by Abhijeet Mohapatra
+- **This Fork**: Maintained by [Abhijeet Mohapatra](https://github.com/er-abhijeet)
 
 ## Contributing
 
-You can contribute to this extension in many ways:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
--   File bug reports by creating issues.
--   Develop this extension further - see [developer guide](docs/dev-guide.md).
--   Spreading the word about this extension.
+**Before creating a Pull Request**, please create an issue to discuss the approach. It makes reviewing and accepting the PR much easier.
 
-**Before creating a Pull Request, please create an issue to discuss the
-approach. It makes reviewing and accepting the PR much easier.**
+## Support
 
-## Telemetry
+If you find this extension useful, consider supporting the development:
 
-To show live user count, the extension sends a request to the server every few
-seconds. No information is sent with the request.
+- [☕ Buy me a coffee](https://buymeacoffee.com/abhijeetmohapatra)
+
+## Contact
+
+- **GitHub**: [@er-abhijeet](https://github.com/er-abhijeet)
+- **LinkedIn**: [Abhijeet Mohapatra](https://www.linkedin.com/in/abhijeet-mohapatra-0292942b4/)
+- **Email**: er.abhijeet83@gmail.com
 
 ## License
-
-Copyright (C) 2019 - Present Divyanshu Agrawal
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
@@ -88,4 +132,6 @@ WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with
-this program. If not, see https://www.gnu.org/licenses/.
+this program. If not, see <https://www.gnu.org/licenses/>.
+
+Copyright (C) 2024 - Present Abhijeet Mohapatra
