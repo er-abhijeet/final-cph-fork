@@ -25,7 +25,7 @@ export const getAutoShowJudgePref = (): boolean =>
 
 export const getSaveLocationPref = (): string => {
     const pref = getPreference('general.saveLocation');
-    const validSaveLocation = pref == '' || fs.existsSync(pref);
+    const validSaveLocation = !pref || pref === '' || fs.existsSync(pref);
     if (!validSaveLocation) {
         vscode.window.showErrorMessage(
             `Invalid save location, reverting to default. path not exists: ${pref}`,
@@ -37,7 +37,7 @@ export const getSaveLocationPref = (): string => {
         );
         return '';
     }
-    return pref;
+    return pref || '';
 };
 
 export const getHideStderrorWhenCompiledOK = (): boolean =>
